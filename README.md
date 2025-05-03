@@ -33,8 +33,8 @@ resources/js/Pages/     # React-based frontend (Domains.tsx)
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/your-project.git
-   cd your-project
+   git clone this repository
+   cd pageRank
    ```
 
 2. **Install dependencies**
@@ -102,7 +102,7 @@ php artisan schedule:run
 
 ## Frontend
 
-Table with domains in main page GET /
+Table with domains in main page.
 
 Served via Inertia.js and React at:
 
