@@ -34,5 +34,9 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'opRank' => [
+        'key' => env('OPENPAGERANK_API_KEY'),
+        'apiUrl' => env('OPENPAGERANK_API_URL', 'https://openpagerank.com/api/v1.0/getPageRank'),
+        'topSitesUrl' => env('TOP_SITES_URL', 'https://raw.githubusercontent.com/Kikobeats/top-sites/master/top-sites.json'),
+    ],
 ];
