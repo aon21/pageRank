@@ -15,7 +15,7 @@ it('should search for domain', function () {
     DomainFactory::new()->create(['domain' => 'example.com']);
     DomainFactory::new()->count(2)->create();
 
-    $response = $this->get('/domains?search=example');
+    $response = $this->get('/api/domains?search=example');
 
     $response
         ->assertOk()
@@ -26,7 +26,7 @@ it('should fail to search for domain', function () {
     DomainFactory::new()->count(5)->create();
 
     $response = $this
-        ->get('/domains?search=nonexistentdomain')
+        ->get('/api/domains?search=nonexistentdomain')
         ->assertOk();
 
     expect($response['data'])->toBeEmpty();
@@ -35,7 +35,7 @@ it('should fail to search for domain', function () {
 it('should return paginated response structure', function () {
     DomainFactory::new()->count(150)->create();
 
-    $response = $this->get('/domains');
+    $response = $this->get('/api/domains');
 
     $response
         ->assertOk()
