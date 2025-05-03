@@ -28,5 +28,5 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withSchedule(function (Schedule $schedule) {
-        $schedule->job(FetchPageRanksJob::class)->everyMinute();
+        $schedule->job(FetchPageRanksJob::class)->daily();
     })->create();
