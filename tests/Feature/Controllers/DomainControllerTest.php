@@ -45,3 +45,10 @@ it('should return paginated response structure', function () {
             'links' => ['first', 'last', 'prev', 'next'],
         ]);
 });
+
+it('rejects invalid pagination params', function () {
+    $response = $this->getJson('/api/domains?page=-5&per_page=1000');
+
+    $response->assertStatus(422);
+    $response->assertJsonValidationErrors(['page', 'per_page']);
+});
